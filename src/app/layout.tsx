@@ -9,7 +9,7 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Slackz",
-  description: "A Slack clone built with love.",
+  description: "Slack for the rest of us",
 };
 
 export default function RootLayout({
