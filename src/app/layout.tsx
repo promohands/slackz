@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import { Lato } from "next/font/google";
+
 import "@/styles/globals.css";
 
 const lato = Lato({
@@ -9,8 +11,10 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "Slackz",
-  description: "Slack for the rest of us",
+  description: "Work like a team, even when you're not together.",
 };
+
+export const revalidate = 0;
 
 export default function RootLayout({
   children,
@@ -19,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body className={lato.className}>
+        <main>{children}</main>
+        <Toaster />
+      </body>
     </html>
   );
 }
